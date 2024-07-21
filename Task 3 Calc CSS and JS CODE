@@ -1,0 +1,114 @@
+CSS:
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to bottom, #33ccff 0%,  #a86ad1 35%, #ff99cc 100%);
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.calculator {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.display {
+    background-color: #333;
+    color: #fff;
+    font-size: 2em;
+    text-align: right;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    min-height: 60px;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.btn {
+    padding: 20px;
+    font-size: 1.5em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background: linear-gradient(to bottom, #33ccff 0%,  #a86ad1 35%, #ff99cc 100%);
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #ddd;
+}
+
+.operator {
+    background-color: #f9a825;
+    color: #fff;
+}
+
+.operator:hover {
+    background-color: #f57f17;
+}
+
+
+
+
+JS:
+document.addEventListener('DOMContentLoaded', function() {
+    const display = document.getElementById('display');
+    const buttons = document.querySelectorAll('.btn');
+    let currentInput = '';
+    let operator = '';
+    let firstOperand = null;
+
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            if (button.hasAttribute('data-num')) {
+                currentInput += button.getAttribute('data-num');
+                display.textContent = currentInput;
+            } else if (button.hasAttribute('data-operator')) {
+                if (firstOperand === null) {
+                    firstOperand = parseFloat(currentInput);
+                } else {
+                    firstOperand = performCalculation(firstOperand, parseFloat(currentInput), operator);
+                    display.textContent = firstOperand;
+                }
+                operator = button.getAttribute('data-operator');
+                currentInput = '';
+            } else if (button.id === 'equals') {
+                if (firstOperand !== null && operator !== '') {
+                    currentInput = performCalculation(firstOperand, parseFloat(currentInput), operator);
+                    display.textContent = currentInput;
+                    firstOperand = null;
+                    operator = '';
+                }
+            } else if (button.id === 'clear') {
+                currentInput = '';
+                firstOperand = null;
+                operator = '';
+                display.textContent = '0';
+            }
+        });
+    });
+
+    function performCalculation(firstOperand, secondOperand, operator) {
+        switch (operator) {
+            case '+':
+                return firstOperand + secondOperand;
+            case '-':
+                return firstOperand - secondOperand;
+            case '*':
+                return firstOperand * secondOperand;
+            case '/':
+                return firstOperand / secondOperand;
+            default:
+                return secondOperand;
+        }
+    }
+});
