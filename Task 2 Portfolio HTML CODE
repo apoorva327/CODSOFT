@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="STYLES.CSS">
+
+    
+</head>
+<body>
+    <header>
+        <h1>Apoorva Pathak</h1>
+        <p> I am currently persuig Btech in computer science from Amity University Gwalior.</p>
+    </header>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <img src="apoorva.png" alt="Apoorva">
+        <p>Hi, I'm Apoorva Pathak. I am a Frontend Web Developler with experience in Html Css Bootstrap. I love creating websites and learning new technologies.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+    </section>
+
+    <section id="skills">
+        <h2>Skills</h2>
+        <ul>
+            <li>Front-end Development</li>
+            <img src="skill1.jpg" alt="Skill 1">
+
+            <li>Designing </li>
+            <img src="skill2.jpg" alt="Skill 1">
+
+            <li>Adaptability </li>
+            <img src="skill3.png" alt="Skill 1">
+
+        </ul>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <ul>
+            <li>
+                <h3>Landing Page</h3>
+                <p>A landing page is an ideal web development project for beginners. It requires basic
+                    knowledge of HTML and CSS. Through this project, you'll learn to create columns, divide
+                    sections, arrange items, and add headers and footers. The most important aspect is
+                    unleashing your creativity to design an impressive page. Pay attention to alignments,
+                    padding, color palette, boxes, and other elements. Be mindful of CSS to avoid overlapping
+                    
+                    elements. In short, a landing page project allows you to apply HTML and CSS skills,
+                    encouraging your creativity while ensuring a visually appealing and user-friendly design.</p>
+                <img src="eg.png" alt="Project 1">
+            </li>
+            
+        </ul>
+    </section>
+
+    <section id="resume">
+        <h2>Resume</h2>
+        <p><a href="Apoorva-Pathak-Resume-.pdf" download>Download My Resume (PDF)</a></p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Email: apoorvapathak764@gmail.com</p>
+        <p>Phone: 8905445769</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Apoorva Pathak. All rights reserved.</p>
+    </footer>
+</body>
+</html>
